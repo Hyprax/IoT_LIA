@@ -1,0 +1,28 @@
+[{
+    "conditions":[
+        {"topic":"Kitchen/Temp", "comparison":">=", "value":20},
+        {"topic":"Kitchen/Presence","comparison":"==","value":1}
+    ],
+    "action":{"message":"WARNING, Temperature too HOT", "topic":"Pi4/Order", "value":"Temperature HIGH"}
+},
+{
+    "conditions":[
+        {"topic":"Kitchen/Temp", "comparison":"<=", "value":20},
+        {"topic":"Kitchen/Presence","comparison":"==","value":1}
+    ],
+    "action":{"message":"WARNING, Temperature too COLD", "topic":"Pi4/Order", "value":"Temperature LOW"}
+},
+{
+    "conditions":[
+        {"topic":"Kitchen/Temp", "comparison":">=", "value":20},
+        {"topic":"Kitchen/Presence","comparison":"==","value":0}
+    ],
+    "action":{"message":"WARNING FIRE", "topic":"Pi4/Order", "value":"FIRE ALERT"}
+},
+{
+    "conditions":[
+        {"topic":"Kitchen/Temp", "comparison":"<=", "value":20},
+        {"topic":"Kitchen/Presence","comparison":"==","value":0}
+    ],
+    "action":{"message":" under control", "topic":"Pi4/Order", "value":"Alert Dismissed"}
+}]
